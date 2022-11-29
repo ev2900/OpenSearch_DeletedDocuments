@@ -1,3 +1,3 @@
-# DeleteDocuments Example
+# Delete Documents Example
 
 1. 
