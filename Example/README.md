@@ -7,3 +7,7 @@
 The resources created by the CloudFormation stack are documented in the architecture below
 
 <img alt="os-deleted-document-arch" src="https://github.com/ev2900/OpenSearch_DeletedDocuments/blob/main/Example/architecture.png">
+
+2. Create an index and populate it with sample data
+
+* 
