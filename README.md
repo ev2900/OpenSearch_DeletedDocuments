@@ -16,3 +16,6 @@ If you have indices with document marked for deletion you can expunge the delete
 Run the ```POST /<index-name>/_forcemerge?only_expunge_deletes=true``` API to expunge the deleted documents.
 
 *Note* the force merge operation triggers an **I/O intensive process** and **blocks all new requests** to your cluster until the merge is complete. Only call the force merge operation against read-only indices, **when no additional data is being written to the index**.
+
+## Example
+Go to the [Example](https://github.com/ev2900/OpenSearch_DeletedDocuments/tree/main/Example) section of this repository for instructions on how to run an example that will demonstrate these concepts
