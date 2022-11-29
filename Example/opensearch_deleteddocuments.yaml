@@ -1,0 +1,70 @@
+Description: Create a publicly accessible OpenSearch domain + Cloud9 enviorment
+Resources:
+
+  OpenSearchDomain:
+    Type: AWS::OpenSearchService::Domain
+    Properties:
+      DomainName: workshop-domain
+      EngineVersion: 'OpenSearch_2.3'
+      # Development configuration
+      ClusterConfig:
+        DedicatedMasterEnabled: false
+        InstanceCount: '1'
+        ZoneAwarenessEnabled: false
+        InstanceType: 'r6g.large.search'
+      EBSOptions:
+        EBSEnabled: true
+        VolumeSize: '100'
+        VolumeType: 'gp3'
+      # Node to node encrpytion must be enabled to use the advanced security options
+      NodeToNodeEncryptionOptions:
+        Enabled: true
+      # Encryption at rest must be ebabled to use the advanced security options
+      EncryptionAtRestOptions:
+        Enabled: true
+      # HTTPS must be required to use the advanced security options
+      DomainEndpointOptions:
+        EnforceHTTPS: true
+      # Create a master user with a pre-defined username and password
+      AdvancedSecurityOptions:
+        Enabled: true
+        InternalUserDatabaseEnabled: true
+        MasterUserOptions:
+          MasterUserName: 'OSMasterUser'
+          MasterUserPassword: 'AwS#OpenSearch1'
+      # Set an access policy open to any AWS resource
+      AccessPolicies:
+        Version: 2012-10-17
+        Statement:
+          Effect: 'Allow'
+          Principal:
+            AWS: '*'
+          Action: 'es:*'
+          Resource: '*'
+
+  Cloud9:
+    Type: AWS::Cloud9::EnvironmentEC2
+    Properties:
+      Name: 'os-cloud9'
+      Description: 'Cloud9 development enviorment'
+      ImageId: 'amazonlinux-2-x86_64'
+      InstanceType: 't2.large'
+      AutomaticStopTimeMinutes: '30'
+      Repositories: [
+        {
+          "PathComponent" : '/OpenSearch_DeletedDocuments',
+          "RepositoryUrl" : 'https://github.com/ev2900/OpenSearch_DeletedDocuments.git'
+        }
+      ]
+
+# Outputs for ease of use
+Outputs:
+  OSDomainARN:
+    Description: OpenSearch domain ARN
+    Value: !GetAtt OpenSearchDomain.Arn
+  UserName:
+    Description: 'OpenSearch Dashboard Login UserName'
+    Value: 'OSMasterUser'
+  Password:
+    Description: 'OpenSearch Dashboard Login Password'
+    Value: 'AwS#OpenSearch1'           
