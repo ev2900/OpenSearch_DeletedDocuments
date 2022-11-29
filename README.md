@@ -1,1 +1,1 @@
-# OpenSearch_DeletedDocuments
+# OpenSearch DeletedDocuments
