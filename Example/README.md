@@ -32,8 +32,8 @@ You will see console window print output confirming that documents are being del
 
 ```GET _cat/indices?v```
 
-<img alt="os-deleted-document-api" src="https://github.com/ev2900/OpenSearch_DeletedDocuments/blob/main/Example/api_number_doc_marked_for_delete.png">
+<img width="1000" alt="os-deleted-document-api" src="https://github.com/ev2900/OpenSearch_DeletedDocuments/blob/main/Example/api_number_doc_marked_for_delete.png">
 
 * via. Cloudwatch 
 
-<img alt="os-deleted-document-api" src="https://github.com/ev2900/OpenSearch_DeletedDocuments/blob/main/Example/cloudwatch_number_doc_marked_for_delete.png">
+<img width="1000" alt="os-deleted-document-api" src="https://github.com/ev2900/OpenSearch_DeletedDocuments/blob/main/Example/cloudwatch_number_doc_marked_for_delete.png">
