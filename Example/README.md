@@ -37,3 +37,23 @@ You will see console window print output confirming that documents are being del
 * via. Cloudwatch 
 
 <img width="1000" alt="os-deleted-document-api" src="https://github.com/ev2900/OpenSearch_DeletedDocuments/blob/main/Example/cloudwatch_number_doc_marked_for_delete.png">
+
+5. Force merge to expunge the deleted documents
+
+```POST /log-data-1/_forcemerge?only_expunge_deletes=true```
+
+Notice the force merge causes a spike in CPU 
+
+<img width="1000" alt="os-deleted-document-api" src="https://github.com/ev2900/OpenSearch_DeletedDocuments/blob/main/Example/cpu_spike.png">
+
+6. Re-check the number of documents flagged for delete
+
+* via. API 
+
+```GET _cat/indices?v```
+
+<img width="1000" alt="os-deleted-document-api" src="https://github.com/ev2900/OpenSearch_DeletedDocuments/blob/main/Example/api_number_doc_marked_for_delete_after.png">
+
+* via. Cloudwatch
+
+<img width="1000" alt="os-deleted-document-api" src="https://github.com/ev2900/OpenSearch_DeletedDocuments/blob/main/Example/cloudwatch_number_doc_marked_for_delete_after.png">
