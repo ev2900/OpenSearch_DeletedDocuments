@@ -6,7 +6,7 @@
 
 The resources created by the CloudFormation stack are documented in the architecture below
 
-<img alt="os-deleted-document-arch" src="https://github.com/ev2900/OpenSearch_DeletedDocuments/blob/main/Example/architecture.png">
+<img alt="os-deleted-document-arch" src="https://github.com/ev2900/OpenSearch_DeletedDocuments/blob/main/Example/README_Pictures/architecture.png">
 
 2. Create an index and populate it with sample data
 
@@ -32,11 +32,11 @@ You will see console window print output confirming that documents are being del
 
 ```GET _cat/indices?v```
 
-<img width="1000" alt="os-deleted-document-api" src="https://github.com/ev2900/OpenSearch_DeletedDocuments/blob/main/Example/api_number_doc_marked_for_delete.png">
+<img width="1000" alt="os-deleted-document-api" src="https://github.com/ev2900/OpenSearch_DeletedDocuments/blob/main/Example/README_Pictures/api_number_doc_marked_for_delete.png">
 
 * via. Cloudwatch 
 
-<img width="1000" alt="os-deleted-document-api" src="https://github.com/ev2900/OpenSearch_DeletedDocuments/blob/main/Example/cloudwatch_number_doc_marked_for_delete.png">
+<img width="1000" alt="os-deleted-document-api" src="https://github.com/ev2900/OpenSearch_DeletedDocuments/blob/main/Example/README_Pictures/cloudwatch_number_doc_marked_for_delete.png">
 
 5. Force merge to expunge the deleted documents
 
@@ -44,7 +44,7 @@ You will see console window print output confirming that documents are being del
 
 Notice the force merge causes a spike in CPU 
 
-<img width="1000" alt="os-deleted-document-api" src="https://github.com/ev2900/OpenSearch_DeletedDocuments/blob/main/Example/cpu_spike.png">
+<img width="1000" alt="os-deleted-document-api" src="https://github.com/ev2900/OpenSearch_DeletedDocuments/blob/main/Example/README_Pictures/cpu_spike.png">
 
 6. Re-check the number of documents flagged for delete
 
@@ -52,8 +52,8 @@ Notice the force merge causes a spike in CPU
 
 ```GET _cat/indices?v```
 
-<img width="1000" alt="os-deleted-document-api" src="https://github.com/ev2900/OpenSearch_DeletedDocuments/blob/main/Example/api_number_doc_marked_for_delete_after.png">
+<img width="1000" alt="os-deleted-document-api" src="https://github.com/ev2900/OpenSearch_DeletedDocuments/blob/main/Example/README_Pictures/api_number_doc_marked_for_delete_after.png">
 
 * via. Cloudwatch
 
-<img width="1000" alt="os-deleted-document-api" src="https://github.com/ev2900/OpenSearch_DeletedDocuments/blob/main/Example/cloudwatch_number_doc_marked_for_delete_after.png">
+<img width="1000" alt="os-deleted-document-api" src="https://github.com/ev2900/OpenSearch_DeletedDocuments/blob/main/Example/README_Pictures/cloudwatch_number_doc_marked_for_delete_after.png">
