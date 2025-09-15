@@ -1,6 +1,6 @@
 # OpenSearch DeletedDocuments
 
-<img width="85" alt="map-user" src="https://img.shields.io/badge/views-2673-green"> <img width="125" alt="map-user" src="https://img.shields.io/badge/unique visits-1489-green">
+<img width="85" alt="map-user" src="https://img.shields.io/badge/views-2673-green"> <img width="125" alt="map-user" src="https://img.shields.io/badge/unique visits-1495-green">
 
 When a document is deleted in OpenSearch it is marked for deletion. It is not physically removed from storage until a merge removes the document(s) from the segments underlying the index shards.
 
